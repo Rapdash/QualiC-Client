@@ -1,4 +1,4 @@
-import { Firebase } from './config';
+import { Firebase } from './api';
 import { FirebaseContext } from './context';
 
 export default Firebase;
