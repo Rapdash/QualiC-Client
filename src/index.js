@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { FirebaseContext } from '../data/firebase';
+import { FirebaseContext } from './data/firebase';
+import { SignUpPage } from './pages/SignUp';
 
 ReactDOM.render((
 <FirebaseContext.Provider>
-    <App />
+    <SignUpPage />
 </FirebaseContext.Provider>)
 , document.getElementById('root'));
 

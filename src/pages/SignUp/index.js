@@ -3,14 +3,25 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { Firebase } from '../../data/firebase';
 
 export const SignUpPage = () => {
-  const firebase = useContext(Firebase)
+  const firebase = useContext(Firebase);
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
 
-  const onSubmit = () => {
-    firebase.createUserWithEmail(email, password).then()
+  const onSubmit = event => {
+    firebase.createUserWithEmail(email, password)
+      .then(authUser => {
+        setEmail('');
+        setPassword('');
+        setConfirmPassword('');
+        setError('');
+      })
+      .catch(error => {
+        setError('');
+      });
+    event.preventDefault();
   }
 
   return (
