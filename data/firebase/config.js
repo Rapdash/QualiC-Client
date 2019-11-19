@@ -1,4 +1,5 @@
 import app from 'firebase/app';
+import auth from 'firebase/auth';
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -12,5 +13,7 @@ const config = {
 export class Firebase {
     constructor() {
         app.initializeApp(config);
+        
+        this.auth = app.auth();
     }
 }
