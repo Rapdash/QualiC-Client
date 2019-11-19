@@ -16,7 +16,12 @@ export class Firebase {
     this.auth = app.auth();
   }
 
-  createUser = (email, password) => {
+  createUserWithEmail = (email, password) => {
     this.auth.createUserWithEmailAndPassword(email, password);
   }
+
+  signInWithEmail = (email, password) => {
+    this.auth.signInWithEmailAndPassword(email, password)
+  }
+  
 }
