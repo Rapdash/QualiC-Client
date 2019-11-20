@@ -8,7 +8,6 @@ import { FirebaseContext } from "../../data/firebase";
 
 export const Navbar = () => {
     const firebase = useContext(FirebaseContext);
-    console.log(firebase.auth)
     return (
         <BNavbar expand="md" variant="dark" bg="dark">
             <Link to="/">
