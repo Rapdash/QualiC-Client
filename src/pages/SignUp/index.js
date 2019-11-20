@@ -1,8 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
+import { withRouter } from "react-router-dom";
+
 import { FirebaseContext } from '../../data/firebase';
 
-export const SignUpPage = () => {
+const SignUpPageBase = (props) => {
+  console.log(props);
   const firebase = useContext(FirebaseContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -57,3 +60,4 @@ export const SignUpPage = () => {
     </Container>
   );
 };
+export const SignUpPage = withRouter(SignUpPageBase);
