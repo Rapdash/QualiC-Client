@@ -4,8 +4,7 @@ import { withRouter } from "react-router-dom";
 
 import { FirebaseContext } from '../../data/firebase';
 
-const SignUpPageBase = (props) => {
-  console.log(props);
+const SignUpPageBase = ({ history }) => {
   const firebase = useContext(FirebaseContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -20,6 +19,7 @@ const SignUpPageBase = (props) => {
         setPassword('');
         setConfirmPassword('');
         setError('');
+        history.push('/');
       })
       .catch(error => {
         setError(error.message);
