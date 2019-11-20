@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useContext } from "react"
 import { Link } from "react-router-dom";
 import { Navbar as BNavbar, Nav } from "react-bootstrap"
 
@@ -15,8 +15,12 @@ export const Navbar = () => {
             <BNavbar.Toggle />
             <BNavbar.Collapse>
                 <Nav className="mr-auto">
-                { firebase.auth.currentUser &&
+                { !firebase.auth.currentUser && (
+                    <>
                     <NavItem to="/" text="Home" />
+                    <NavItem to="/" text="Create New User" />
+                    </>
+                    )
                 }
                 </Nav>
             </BNavbar.Collapse>
