@@ -8,6 +8,7 @@ export const Router = () => {
     return (
         <BrowserRouter>
             <Navbar />
+            
             <Route path="/signup" component={SignUpPage} />
         </BrowserRouter>
     )

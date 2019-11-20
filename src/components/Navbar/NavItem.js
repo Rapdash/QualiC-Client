@@ -6,7 +6,7 @@ import { LinkContainer } from "react-router-bootstrap"
 export const NavItem = ({ to, text}) => (
     <Nav.Item>
         <LinkContainer to={to}>
-            <Nav.Link>{text}</Nav.Link>
+            <Nav.Link className="mx-auto">{text}</Nav.Link>
         </LinkContainer>
     </Nav.Item>
 )

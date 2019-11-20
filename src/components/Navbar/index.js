@@ -7,8 +7,9 @@ import { FirebaseContext } from "../../data/firebase";
 
 export const Navbar = () => {
     const firebase = useContext(FirebaseContext);
+    console.log(firebase.auth)
     return (
-        <BNavbar expand="md">
+        <BNavbar expand="md" variant="dark" bg="dark">
             <Link to="/">
                 <BNavbar.Brand>QualiC</BNavbar.Brand>
             </Link>
@@ -17,8 +18,8 @@ export const Navbar = () => {
                 <Nav className="mr-auto">
                 { !firebase.auth.currentUser && (
                     <>
-                    <NavItem to="/" text="Home" />
-                    <NavItem to="/" text="Create New User" />
+                    <NavItem to="/checklists" text="Checklists" />
+                    <NavItem to="/new-checklist" text="Create New Checklist" />
                     </>
                     )
                 }
