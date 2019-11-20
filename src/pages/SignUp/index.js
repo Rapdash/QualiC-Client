@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
 
+import * as routes from "../../constants/routes";
 import { FirebaseContext } from '../../data/firebase';
 
 const SignUpPageBase = ({ history }) => {
@@ -19,7 +20,7 @@ const SignUpPageBase = ({ history }) => {
         setPassword('');
         setConfirmPassword('');
         setError('');
-        history.push('/');
+        history.push(routes.index);
       })
       .catch(error => {
         setError(error.message);

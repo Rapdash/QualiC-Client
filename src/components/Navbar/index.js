@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import { Link } from "react-router-dom";
 import { Navbar as BNavbar, Nav } from "react-bootstrap"
 
+import * as routes from "../../constants/routes";
 import { NavItem } from "./NavItem";
 import { FirebaseContext } from "../../data/firebase";
 
@@ -18,8 +19,8 @@ export const Navbar = () => {
                 <Nav className="mr-auto">
                 { !firebase.auth.currentUser && (
                     <>
-                    <NavItem to="/checklists" text="Checklists" />
-                    <NavItem to="/new-checklist" text="Create New Checklist" />
+                    <NavItem to={routes.checklists} text="Checklists" />
+                    <NavItem to={routes.newChecklist} text="Create New Checklist" />
                     </>
                     )
                 }
