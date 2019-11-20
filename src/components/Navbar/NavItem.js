@@ -9,4 +9,4 @@ export const NavItem = ({ to, text}) => (
             <Nav.Link className="mx-auto active">{text}</Nav.Link>
         </LinkContainer>
     </Nav.Item>
-)
+);
