@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import * as serviceWorker from './serviceWorker';
 import { FirebaseContext, Firebase } from './data/firebase';
-import { SignUpPage } from './pages/SignUp';
+import { Router } from './components/Router';
 
 ReactDOM.render((
 <FirebaseContext.Provider value={new Firebase()}>
-    <SignUpPage />
+    <Router />
 </FirebaseContext.Provider>)
 , document.getElementById('root'));
 
