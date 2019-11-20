@@ -61,4 +61,4 @@ const SignUpPageBase = ({ history }) => {
     </Container>
   );
 };
-export const SignUpPage = withRouter(SignUpPageBase);
+export const SignUpPage = SignUpPageBase
